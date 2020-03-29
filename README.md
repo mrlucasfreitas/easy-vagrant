@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/mrlucasfreitas/easy-vagrant/img/vagrant01.png)
+![Logo of the project](https://raw.githubusercontent.com/mrlucasfreitas/easy-vagrant/master/img/vagrant01.png)
 
 # Easy Vagrant
 > Welcome to my fast project about vagrant.
