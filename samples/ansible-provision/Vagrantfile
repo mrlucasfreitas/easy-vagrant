@@ -1,0 +1,28 @@
+# By: mrlucasfreitas
+# https://github.com/mrlucasfreitas
+
+# Ansible variables
+ansible_provision_playbook = ENV["ANSIBLE_PROVISION_PLAYBOOK"] || "test.yml"
+
+Vagrant.configure("2") do |config|
+  config.vm.define "vagrant-ansible"
+  config.vm.box = "bento/centos-7"
+  config.vm.box_version = "202002.04.0"
+  config.vm.hostname = "vagrant-ansible.local"
+  config.vm.network :private_network, ip: "172.16.13.11"
+  
+  config.vm.provider :virtualbox do |vb|
+    vb.name = "vagrant-ansible"
+    vb.gui = false
+    vb.cpus = 1
+    vb.memory = 512
+  end
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "tests/" + ansible_provision_playbook
+    ansible.become = true
+  
+    ansible.tags = ENV["TAGS"]
+    ansible.skip_tags = ENV["SKIP_TAGS"]
+    ansible.verbose = ENV["VERBOSE"] || "v"
+  end
+end
