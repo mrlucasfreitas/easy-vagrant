@@ -1,8 +1,9 @@
 ![Logo of the project](https://raw.githubusercontent.com/mrlucasfreitas/easy-vagrant/master/img/vagrant01.png)
 
 # Easy Vagrant
-> Welcome to my fast project about vagrant.
 > Always in branch Master.
+
+Welcome to my fast project about vagrant, easy, simple and functional.
 
 My objective is to show vagrant for daily use in uncomplicated, simple and useful ways.
 
