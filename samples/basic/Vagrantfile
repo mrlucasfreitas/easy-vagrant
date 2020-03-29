@@ -1,0 +1,17 @@
+# By: mrlucasfreitas
+# https://github.com/mrlucasfreitas
+
+Vagrant.configure("2") do |config|
+    config.vm.define "vagrant-basic"
+    config.vm.box = "bento/ubuntu-18.10"
+    config.vm.box_version = "201910.20.0"
+    config.vm.hostname = "vagrant-basic.local"
+    config.vm.network :private_network, ip: "172.16.11.11"
+
+    config.vm.provider :virtualbox do |vb|
+      vb.name = "vagrant-basic"
+      vb.gui = false
+      vb.cpus = 1
+      vb.memory = 512
+  end
+end
