@@ -110,4 +110,11 @@ Some examples of Vagrantfile that can be used:
 
 In this project, I used [Bento](https://app.vagrantup.com/bento)'s images, but feel free to change.
 
+OS used:
+- Ubuntu 18
+- CentOS 6
+- CentOS 7
+- CentOS 8
+- FreeBSD 12
+
 Other images and versions available: [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
