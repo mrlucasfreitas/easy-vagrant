@@ -1,0 +1,52 @@
+# By: mrlucasfreitas
+# https://github.com/mrlucasfreitas
+
+unless Vagrant.has_plugin? 'vagrant-hostsupdater'
+    system('vagrant plugin install vagrant-hostsupdater')
+end
+
+# Define VM images and hostnames
+hosts = [
+  {
+    :name     => "vagrant-advanced-centos7",
+    :box      => "bento/centos-7",
+    :box_v    => "202002.04.0",
+    :vm_name  => "vagrant-advanced-centos7",
+    :hostname => "vagrant-advanced-centos7.local",
+    :ip       => "172.16.12.11"
+  },
+  {
+    :name     => "vagrant-advanced-freebsd12",
+    :box      => "bento/freebsd-12",
+    :box_v    => "201912.20.0 ",
+    :vm_name  => "vagrant-advanced-freebsd12",
+    :hostname => "vagrant-advanced-freebsd12.local",
+    :ip       => "172.16.12.12"
+  }
+]
+
+# Define VM configuration
+Vagrant.configure("2") do |config|
+  hosts.each do |host|
+    config.vm.define host[:name] do |m|
+      m.vm.box = host[:box]
+      m.vm.box_version = host[:box_v]
+      m.vm.hostname = host[:hostname]
+      m.vm.network :private_network, ip: host[:ip]
+
+      if host[:name] =~ /^freebsd/ then
+        m.vm.synced_folder ".", "/vagrant", id: "vagrant-root", disabled: true
+        m.ssh.shell = "sh"
+        m.vm.base_mac = host[:base_mac]
+        m.vm.boot_timeout = 600
+      end
+
+      m.vm.provider :virtualbox do |vb|
+        vb.name = host[:vm_name]
+        vb.gui = false
+        vb.cpus = 1
+        vb.memory = 512
+      end
+    end
+  end
+end
