@@ -80,3 +80,34 @@ $ vagrant destroy
 ```
 
 ## Vagrantfile examples
+Some examples of Vagrantfile that can be used:
+
+- [Basic](https://github.com/mrlucasfreitas/easy-vagrant/tree/master/samples/basic)
+
+  _A basic configuration for starting a Vagrantfile._
+
+- [Advanced]()
+
+  _A more complete Vagrantfile configuration, containing array and loops._
+
+- [Ansible](https://github.com/mrlucasfreitas/easy-vagrant/tree/master/samples/ansible-provision)
+
+  _Automatically provisioning a Vagrant machine in an Ansible role._
+
+- [Execute scripts](https://github.com/mrlucasfreitas/easy-vagrant/tree/master/samples/execute-script)
+
+  _Run SH scripts on a Vagrantfile._
+
+- [Kubernetes]()
+
+  _Use for Kubernetes Cluster tests, you need good settings._
+
+- [My Vagrant](https://github.com/mrlucasfreitas/easy-vagrant/tree/master/samples/my-vagrant)
+
+  _My daily use, a mix of all the examples above._
+  
+## Additional informations
+
+In this project, I used [Bento](https://app.vagrantup.com/bento)'s images, but feel free to change.
+
+Other images and versions available: [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
