@@ -32,6 +32,37 @@ $ apt update
 $ apt install vagrant
 ```
 
+## Install Vagrant-hostsupdater
+
+This plugin adds an entry to your /etc/hosts file on the host system.
+
+Install plugin:
+```sh
+$ vagrant plugin install vagrant-hostsupdater
+```
+
+Update the plugin with:
+```sh
+$ vagrant plugin update vagrant-hostsupdater
+```
+---
+
+Enable host resolution defined in Vagrantfile:
+
+Example in Vagrantfile:
+```sh
+...
+config.vm.hostname = "vagrant-test.local"
+...
+```
+
+Test:
+```sh
+$ ping vagrant-test.local
+```
+
+More information [here](https://github.com/cogitatio/vagrant-hostsupdater).
+
 ## Basic commands
 Now create a test directory and cd into the test directory.
 Initialize the vagrant machine.
