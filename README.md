@@ -117,7 +117,7 @@ Some examples of Vagrantfile that can be used:
 
   _A basic configuration for starting a Vagrantfile._
 
-- [Advanced]()
+- [Advanced](https://github.com/mrlucasfreitas/easy-vagrant/tree/master/samples/advanced)
 
   _A more complete Vagrantfile configuration, containing array and loops._
 
@@ -148,4 +148,4 @@ OS used:
 - CentOS 8
 - FreeBSD 12
 
-Other images and versions available: [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
+Other images and versions available: [Vagrant Cloud](https://app.vagrantup.com/boxes/search).
