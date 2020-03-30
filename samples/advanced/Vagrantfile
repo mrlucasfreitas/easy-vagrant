@@ -1,6 +1,7 @@
 # By: mrlucasfreitas
 # https://github.com/mrlucasfreitas
 
+# Install vagrant-hostsupdater plugin
 unless Vagrant.has_plugin? 'vagrant-hostsupdater'
     system('vagrant plugin install vagrant-hostsupdater')
 end
